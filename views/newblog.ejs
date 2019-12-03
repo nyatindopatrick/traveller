@@ -1,0 +1,102 @@
+<%include ./partials/adminNav%>
+
+<div align="center">
+  <div class="col-md-6">
+    <form action="/new/blog" method="POST" enctype="multipart/form-data">
+      <div
+        id="contact-form"
+        class="form-container"
+        data-form-container
+        style="color: rgb(0, 0, 0); background: #ffffff46;"
+      >
+        <div class="row-lg-8">
+          <div class="form-title">
+            <span> Create Blog Post </span>
+          </div>
+        </div>
+        <div class="file-upload">
+          <button
+            class="file-upload-btn"
+            type="button"
+            onclick="$('.file-upload-input').trigger( 'click' )"
+          >
+            Add Image
+          </button>
+
+          <div class="image-upload-wrap">
+            <input
+              class="file-upload-input"
+              type="file"
+              name="image"
+              onchange="readURL(this);"
+              accept="image/*"
+              required
+            />
+            <div class="drag-text">
+              <h3>Drag and drop a file or select add Image</h3>
+            </div>
+          </div>
+          <div class="file-upload-content">
+            <img class="file-upload-image" src="#" alt="your image" />
+            <div class="image-title-wrap">
+              <button
+                type="button"
+                onclick="removeUpload()"
+                class="remove-image"
+              >
+                Remove <span class="image-title">Uploaded Image</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="input-container" style="width:85%">
+          <div class="row">
+            <span class="req-input valid">
+              <span
+                class="input-status"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Input your post title."
+              >
+              </span>
+              <input
+                required
+                autocomplete="off"
+                type="text"
+                data-min-length="8"
+                name="title"
+                placeholder="Post Title"
+              />
+            </span>
+          </div>
+
+          <div class="row">
+            <span class="req-input message-box valid">
+              <span
+                class="input-status"
+                data-toggle="tooltip"
+                data-placement="top"
+                title="Post Contents."
+              >
+              </span>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  name="body"
+                  placeholder="Type post description here..."
+                  id="exampleFormControlTextarea1"
+                  rows="8"
+                ></textarea>
+              </div>
+            </span>
+          </div>
+          <div class="row submit-row">
+            <button type="submit" class="btn btn-block submit-form valid">
+              Create Post
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
